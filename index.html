@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wholesale Mart</title>
+  <style>
+    /* ---------- Base styles ---------- */
+    :root {
+      --primary: #2b6cb0;
+      --secondary: #4299e1;
+      --light: #f7fafc;
+      --dark: #1a202c;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; border-radius: var(--radius); }
+
+    /* ---------- Header ---------- */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 { font-size: 22px; }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(rgba(43,108,176,0.6), rgba(43,108,176,0.6)),
+                  url("https://images.unsplash.com/photo-1586864387967-9b89351b1b15?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .hero a {
+      background: var(--secondary);
+      padding: 12px 22px;
+      border-radius: var(--radius);
+      font-weight: bold;
+      box-shadow: var(--shadow);
+    }
+    .hero a:hover {
+      background: #3182ce;
+    }
+
+    /* ---------- Categories ---------- */
+    .section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h3 {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 26px;
+      color: var(--primary);
+    }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+    }
+    .category-card {
+      background: white;
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .category-card h4 {
+      margin-top: 12px;
+    }
+
+    /* ---------- Products ---------- */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      padding: 16px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .product h4 {
+      font-size: 18px;
+      margin: 6px 0;
+    }
+    .price {
+      font-weight: bold;
+      color: var(--primary);
+    }
+    .btn {
+      background: var(--secondary);
+      color: white;
+      padding: 8px 12px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn:hover { background: #3182ce; }
+
+    /* ---------- Offers ---------- */
+    .offers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    .offer-card {
+      background: white;
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      flex: 1 1 250px;
+      text-align: center;
+    }
+    .offer-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    /* ---------- About ---------- */
+    .about {
+      background: #edf2f7;
+      padding: 30px;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 26px; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Wholesale Mart</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Products</a>
+      <a href="#offers">Offers</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h2>Welcome to Wholesale Mart</h2>
+    <p>Your one-stop destination for wholesale groceries, electronics, and more!</p>
+    <a href="#products">Shop Now</a>
+  </section>
+
+  <!-- Categories -->
+  <section class="section" id="categories">
+    <h3>Shop by Categories</h3>
+    <div class="categories">
+      <div class="category-card">
+        <img src="https://img.icons8.com/color/96/grocery-bag.png" alt="Groceries" />
+        <h4>Groceries</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://img.icons8.com/color/96/laptop.png" alt="Electronics" />
+        <h4>Electronics</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://img.icons8.com/color/96/t-shirt.png" alt="Clothing" />
+        <h4>Clothing</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://img.icons8.com/color/96/shampoo.png" alt="Personal Care" />
+        <h4>Personal Care</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section" id="products">
+    <h3>Featured Products</h3>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1586201375761-83865001e17b?auto=format&fit=crop&w=400&q=80" alt="Rice Bag" />
+        <h4>Premium Rice (25kg)</h4>
+        <p class="price">₹1,200</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1590080876474-d919c8c8dfd9?auto=format&fit=crop&w=400&q=80" alt="Laptop" />
+        <h4>Business Laptop</h4>
+        <p class="price">₹39,999</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1593032457866-5026c51c6ac6?auto=format&fit=crop&w=400&q=80" alt="T-Shirt" />
+        <h4>Cotton T-Shirt (Pack of 5)</h4>
+        <p class="price">₹999</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offers -->
+  <section class="section" id="offers">
+    <h3>Special Offers</h3>
+    <div class="offers">
+      <div class="offer-card">
+        <strong>Flat 20% OFF</strong>
+        On groceries above ₹5,000
+      </div>
+      <div class="offer-card">
+        <strong>Buy 2 Get 1 Free</strong>
+        On selected clothing packs
+      </div>
+      <div class="offer-card">
+        <strong>Free Delivery</strong>
+        On electronics above ₹25,000
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <h3>About Us</h3>
+    <p>Wholesale Mart is India’s trusted wholesale marketplace bringing the best quality products at unbeatable prices. Our mission is to simplify bulk buying for businesses and families alike.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>📞 Contact us: +91-9876543210 | ✉️ info@wholesalemart.com</p>
+    <p>© 2025 Wholesale Mart. All rights reserved.</p>
+  </footer>
+</body>
+</html>
